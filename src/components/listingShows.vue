@@ -14,6 +14,12 @@
       <ShowCard v-for="show in showsStore.shows" :key="show.id" :show="show" />
     </div>
 
+    <div v-if="showsStore.shows.length > 0 && showsStore.searchResults.length === 0" class="flex justify-center mt-4">
+      <button :disabled="showsStore.page <= 1" @click="showsStore.setPage(showsStore.page - 1)" class="mx-2 px-4 py-2 bg-blue-500 text-white rounded">Previous</button>
+      <span>Page {{ showsStore.page }}</span>
+      <button @click="showsStore.setPage(showsStore.page + 1)" class="mx-2 px-4 py-2 bg-blue-500 text-white rounded">Next</button>
+    </div>
+
     <div v-else-if="!showsStore.loading && !showsStore.error && showsStore.searchResults.length === 0 && showsStore.shows.length === 0">
       <p class="text-center">No shows found.</p>
     </div>
@@ -24,11 +30,11 @@
 import { onMounted } from 'vue';
 import { useShowStore } from '@/stores/showsStore';
 import SearchBar from './searchBar.vue';
-import ShowCard from './showCard.vue'; // Import ShowCard component
+import ShowCard from './showCard.vue';
 
 const showsStore = useShowStore();
 
 onMounted(() => {
-  showsStore.fetchShows();
+  showsStore.fetchShows(showsStore.page);
 });
 </script>
