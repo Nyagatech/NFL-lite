@@ -52,8 +52,8 @@ onMounted(() => {
 });
 
 const navigateToShowDetails = (showId) => {
+  console.log("Navigating to show details with ID:", showId);
   showsStore.fetchShowDetails(showId);
-  showsStore.fetchEpisodes(showId);
   router.push({ name: 'ShowDetails', params: { id: showId } });
 };
 </script>

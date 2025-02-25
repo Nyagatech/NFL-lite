@@ -27,24 +27,24 @@
   </template>
   
   <script setup>
-  import { onMounted, onUnmounted } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
-  import { useShowStore } from '@/stores/showsStore';
-  
-  const route = useRoute();
-  const router = useRouter();
-  const showStore = useShowStore();
-  const showId = route.params.id;
-  
-  onMounted(() => {
-    showStore.fetchShowDetails(showId);
-  });
-  
-  onUnmounted(() => {
-    showStore.clearShowDetails();
-  });
-  
-  const goBack = () => {
-    router.go(-1);
-  };
-  </script>
+import { onMounted, onUnmounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useShowStore } from '@/stores/showsStore';
+
+const route = useRoute();
+const router = useRouter();
+const showStore = useShowStore();
+const showId = route.params.id;
+
+onMounted(() => {
+  showStore.fetchShowDetails(showId);
+});
+
+onUnmounted(() => {
+  showStore.clearShowDetails();
+});
+
+const goBack = () => {
+  router.go(-1);
+};
+</script>
