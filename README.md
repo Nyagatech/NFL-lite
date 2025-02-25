@@ -1,15 +1,31 @@
 # Netflixlite
 
 This template should help get you started developing with Vue 3 in Vite.
+## Features
 
-## Recommended IDE Setup
+-   **Show Listing :** Displays a grid of TV shows fetched from the TV Maze API.
+-   **Search Functionality:** Enables users to search for TV shows using a search bar.
+-   **Show Details Page:** Provides detailed information about individual shows, including summaries, cast, and episode lists.
+-   **Responsive Design:** Ensures a consistent user experience across different screen sizes.
+-   **State Management with Pinia:** Efficiently manages application state.
+-   **Routing with Vue Router:** Enables smooth navigation between pages.
+-   **Styled with Tailwind CSS:** Provides a clean and modern user interface.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Technologies Used
 
-## Customize configuration
+-   Vue 3 (Composition API)
+-   JavaScript
+-   Pinia (State Management)
+-   Vue Router
+-   Tailwind CSS
+-   TV Maze API
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Deployed on Vercel
 
+You can view the live demo of the application here: [nfl-lite.vercel.app](https://nfl-lite.vercel.app)
+commended IDE Setup
+
+ 
 ## Project Setup
 
 ```sh
