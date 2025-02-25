@@ -14,22 +14,23 @@ export const useShowStore = defineStore("showStore", {
     favouriteShowIds: [],
   }),
   actions: {
-    //this function fetches all the shows from the api
+    // This function fetches shows from the API with pagination
     async fetchShows() {
       this.loading = true;
       this.error = null;
       try {
+        const start = (this.page - 1) * this.showsPerPage;
         const response = await axios.get(
-          `https://api.tvmaze.com/shows`
+          `https://api.tvmaze.com/shows?page=${this.page - 1}`
         );
-        this.shows = response.data;
+        this.shows = response.data.slice(0, this.showsPerPage);
       } catch (error) {
         this.error = error.message || "An error occurred";
       } finally {
         this.loading = false;
       }
     },
-    //this function searches for a show using the api
+    // This function searches for a show using the API
     async searchShow(query) {
       this.loading = true;
       this.error = null;
@@ -44,7 +45,7 @@ export const useShowStore = defineStore("showStore", {
         this.loading = false;
       }
     },
-    //this function fetches the details of a show using the api
+    // This function fetches the details of a show using the API
     async fetchShowDetails(id) {
       this.loading = true;
       this.error = null;
@@ -62,7 +63,7 @@ export const useShowStore = defineStore("showStore", {
         this.loading = false;
       }
     },
-    // this function clears the selected show details
+    // This function clears the selected show details
     clearShowDetails() {
       this.selectedShow = null;
       this.episodes = [];
@@ -71,19 +72,21 @@ export const useShowStore = defineStore("showStore", {
       this.page = page;
       this.fetchShows();
     },
-    // this function adds a show to the favourites
+    // This function adds a show to the favourites
     addFavouriteShow(showId) {
       if (!this.favouriteShowIds.includes(showId)) {
         this.favouriteShowIds.push(showId);
         this.saveFavourites();
       }
     },
-    // this function removes a show from the favourites
+    // This function removes a show from the favourites
     removeFavouriteShow(showId) {
-      this.favouriteShowIds = this.favouriteShowIds.filter((id) => id !== showId);
+      this.favouriteShowIds = this.favouriteShowIds.filter(
+        (id) => id !== showId
+      );
       this.saveFavourites();
     },
-    // this function checks if a show is in the favourites
+    // This function checks if a show is in the favourites
     isFavouriteShow(showId) {
       return this.favouriteShowIds.includes(showId);
     },
@@ -98,7 +101,7 @@ export const useShowStore = defineStore("showStore", {
         this.favouriteShowIds = [];
       }
     },
-    // this function saves the favourites to local storage
+    // This function saves the favourites to local storage
     saveFavourites() {
       localStorage.setItem(
         "netflix-lite-favourites",
