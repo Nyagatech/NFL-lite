@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import listingShows from '@/components/listingShows.vue'
+import index from '@/components/index.vue'
  
 
 const router = createRouter({
@@ -8,8 +9,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: listingShows
+      component: index
      
+    },
+    {
+      path: '/shows',
+      name: 'ListingShows',
+      component: listingShows
     },
     {
       path: '/show/:id',

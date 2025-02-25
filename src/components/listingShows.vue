@@ -1,8 +1,8 @@
 <template>
-   <Hero />
+
   <div class="container mx-auto p-4">
     <h1 class="text-2xl font-bold mb-4">TV Shows</h1>
-    <SearchBar @search="showsStore.searchShow" />
+    <SearchBar class="mb-4"/>
 
     <div v-if="showsStore.loading" class="text-center text-3xl font-bold">Loading...</div>
     <div v-if="showsStore.error" class="text-red-500 text-center">{{ showsStore.error }}</div>

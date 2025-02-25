@@ -4,7 +4,7 @@
       <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to NetflixLite</h1>
         <p class="text-lg md:text-xl mb-8">Your favorite shows, all in one place.</p>
-        <router-link to="/" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full">
+        <router-link to="/shows" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full">
           Explore Shows
         </router-link>
       </div>

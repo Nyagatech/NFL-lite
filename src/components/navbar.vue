@@ -103,6 +103,7 @@
   
   const navLinks = [
     { path: '/', label: 'Home', icon: { xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 24 24', d: 'M3 12l2-2m0 0l7-7a7 7 0 2110 3v8a7 7 0 11-10 3zm10 3.846l-2-2m2 2l7-7m-7 7l-2-2' } },
+    { path: '/shows', label: 'Shows', icon: { xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 24 24', d: 'M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V4a2 2 0 012-2h14a2 2 0 012 2v16a2 2 0 01-2 2H9.83l-4 4z' } },
     { path: '/favourites', label: 'Favourite', icon: { xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 24 24', d: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 13.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' } },
   ];
   
