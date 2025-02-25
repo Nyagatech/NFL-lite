@@ -107,7 +107,3 @@ export const useShowStore = defineStore("showStore", {
     },
   },
 });
-
-// Loading the store and loading the favourites from local storage
-const showStore = useShowStore();
-showStore.loadFavourites();
