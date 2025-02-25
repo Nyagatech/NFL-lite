@@ -1,4 +1,5 @@
 <template>
+   <Hero />
   <div class="container mx-auto p-4">
     <h1 class="text-2xl font-bold mb-4">TV Shows</h1>
     <SearchBar @search="showsStore.searchShow" />
@@ -31,6 +32,7 @@ import { onMounted } from 'vue';
 import { useShowStore } from '@/stores/showsStore';
 import SearchBar from './searchBar.vue';
 import ShowCard from './showCard.vue';
+import Hero from './hero.vue';
 
 const showsStore = useShowStore();
 
