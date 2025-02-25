@@ -12,7 +12,9 @@ const router = createRouter({
      
     },
     {
-      
+      path: '/show/:showId',
+      name: 'Show',
+      component: () => import('@/components/showDetails.vue')
       
     },
   ],
