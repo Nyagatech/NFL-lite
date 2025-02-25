@@ -12,13 +12,6 @@
           :src="show.image[imageSize]"
           :alt="show.name"
           class="absolute inset-0 w-full h-full object-cover rounded-md"
-          @error="handleImageError"
-        />
-        <img
-          v-else
-          src="../assets/placeholder.png"
-          alt="placeholder"
-          class="absolute inset-0 w-full h-full object-cover rounded-md"
         />
       </div>
       <h2 class="text-lg font-semibold truncate mb-1">{{ show.name }}</h2>
@@ -50,16 +43,11 @@ const props = defineProps({
   },
 });
 
-const placeHolderImagePath = ref("../assets/placeholder.png");
 const showStore = useShowStore();
 
 const isFavorite = computed(() => {
   return showStore.isFavouriteShow(props.show.id);
 });
-
-function handleImageError(event) {
-  event.target.src = placeHolderImagePath.value;
-}
 
 const toggleFavorite = () => {
   if (isFavorite.value) {
