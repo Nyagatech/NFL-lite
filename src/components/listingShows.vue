@@ -2,6 +2,8 @@
     <div class="bg-gray-900">
     <div class="container mx-auto p-4">
       <h1 class="text-2xl font-bold mb-4">TV Shows</h1>
+      <searchInput />
+    
   
       <div v-if="showsStore.loading" class="text-center">Loading...</div>
   
@@ -24,6 +26,7 @@
   
   <script setup lang="ts">
   import { onMounted } from 'vue';
+  import searchInput from './searchInput.vue';
   import { useShowStore } from '../stores/showsStore';
   
   const showsStore = useShowStore();
